@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Garnida - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 60rem;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(to right, #1e293b, #334155);
+            padding: 48px 32px;
+            color: white;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .avatar {
+            width: 128px;
+            height: 128px;
+            background: #475569;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-info {
+            text-align: center;
+        }
+
+        .header-info h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .header-info p {
+            font-size: 20px;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .contact-link:hover {
+            color: white;
+        }
+
+        .content {
+            padding: 40px 32px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            color: #64748b;
+        }
+
+        .section-text {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: #f1f5f9;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: #475569;
+            font-weight: 500;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #e2e8f0;
+        }
+
+        .experience-item {
+            border-left: 4px solid #1e293b;
+            padding-left: 24px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item.secondary {
+            border-left-color: #94a3b8;
+        }
+
+        .experience-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .experience-meta {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        .experience-desc {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-btn {
+            width: 48px;
+            height: 48px;
+            background: #1e293b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 24px;
+        }
+
+        .social-btn:hover {
+            background: #0f172a;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: #64748b;
+        }
+
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .header-info {
+                text-align: left;
+            }
+
+            .contact-links {
+                justify-content: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="header-content">
+                    <div class="avatar">RG</div>
+                    <div class="header-info">
+                        <h1>Ryan Garnida</h1>
+                        <p>Full Stack Developer</p>
+                        <div class="contact-links">
+                            <a href="mailto:garnidacom@gmail.com" class="contact-link">
+                                <span>📧</span>
+                                <span>garnidacom@gmail.com</span>
+                            </a>
+                            <a href="tel:087787431834" class="contact-link">
+                                <span>📱</span>
+                                <span>0877-8743-1834</span>
+                            </a>
+                            <div class="contact-link">
+                                <span>📍</span>
+                                <span>Bandung, Indonesia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <section class="section">
+                    <div class="section-title">
+                        <span class="section-icon">💼</span>
+                        Tentang Saya
+                    </div>
+                    <p class="section-text">
+                        Saya adalah mahasiswa di STMIK Bandung yang passionate dalam development web dan mobile. Memiliki keahlian dalam React, Node.js, dan berbagai teknologi web terkini. Selalu eager to learn dan mengikuti perkembangan teknologi terbaru dengan semangat untuk menciptakan solusi digital yang inovatif dan user-friendly.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <div class="section-title">
+                        <span class="section-icon">🎓</span>
+                        Keahlian
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-tag">React</div>
+                        <div class="skill-tag">TypeScript</div>
+                        <div class="skill-tag">Node.js</div>
+                        <div class="skill-tag">Tailwind CSS</div>
+                        <div class="skill-tag">PostgreSQL</div>
+                        <div class="skill-tag">Git</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-title">
+                        <span class="section-icon">🏆</span>
+                        Pengalaman
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-title">Ketua Himpunan</div>
+                        <div class="experience-meta">STMIK Bandung • 2024 - 2025</div>
+                        <div class="experience-desc">
+                            Memimpin dan mengelola himpunan mahasiswa, mengorganisir acara-acara akademik dan membangun kolaborasi dengan organisasi lainnya.
+                        </div>
+                    </div>
+                    <div class="experience-item secondary">
+                        <div class="experience-title">Mahasiswa STMIK Bandung</div>
+                        <div class="experience-meta">STMIK Bandung • 2022 - Sekarang</div>
+                        <div class="experience-desc">
+                            Mendalami ilmu teknologi informasi dan mengembangkan keterampilan dalam web development dan mobile development.
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-title">Connect With Me</div>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 Ryan Garnida. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
